@@ -16,4 +16,16 @@ public:
   static int Add(int a, int b);
 };
 
+// ----------------------------------------------------
+// Class dollar; for satisfying the multiply test from 
+// Test Driven Development by Example
+// ----------------------------------------------------
+class Dollar {
+   private:
+      int value;
+   public:
+      Dollar(int val) : value(val) {};
+      int amount();
+      void times(const int factor);
+};
 #endif // _PROJECT_NAME_LIB_HPP_

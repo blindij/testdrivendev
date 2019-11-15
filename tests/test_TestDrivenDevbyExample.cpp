@@ -9,3 +9,9 @@ TEST_CASE("TDDbyexample test") {
     REQUIRE(AddTwo::Add(-9, 9) == 0);
   }
 }
+
+TEST_CASE("Test multiplication","[multiplication]"){
+   Dollar five = {5};
+   five.times(2);
+   REQUIRE(five.amount() == 10);
+}

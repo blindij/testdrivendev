@@ -35,3 +35,9 @@ make
 make test
 ```
 
+## Our to-do-list
+  * USD5 + 10 CHF = USD10 if rate is 2:1
+  * __USD 5 * 2 = USD 10_
+  * Make "amount" private
+  * Dollar side-effects?
+  * Money rounding?
