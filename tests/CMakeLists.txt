@@ -1,0 +1,8 @@
+
+include_directories(../thirdparty/catch2)
+
+add_executable(test_TestDrivenDevbyExample test_TestDrivenDevbyExample.cpp)
+
+target_link_libraries(test_TestDrivenDevbyExample PRIVATE TDDbyexample)
+
+add_test(NAME TestDrivenDevbyExample_test COMMAND test_TestDrivenDevbyExample)
