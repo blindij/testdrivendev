@@ -27,3 +27,9 @@ TEST_CASE("Test multiplication","[multiplication]"){
       REQUIRE( product.amount() == 15 );
    }
 }
+
+TEST_CASE("Value Object implement equals","[equals]"){
+   Dollar f={5};
+   Dollar g={5};
+   REQUIRE (  f.equals(g) );
+}
