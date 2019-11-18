@@ -12,6 +12,6 @@ Dollar Dollar::times(const int factor){
    return t;
 }
 
-bool Dollar::equals(const Dollar dobj){
+bool Dollar::equals(const Dollar& dobj){
    return this->value == dobj.value;
 }
