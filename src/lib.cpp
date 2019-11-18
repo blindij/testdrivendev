@@ -6,6 +6,8 @@ int Dollar::amount(){
       return value;
 }
 
-void Dollar::times(const int factor){
-   value *= factor;
+Dollar Dollar::times(const int factor){
+   Dollar t = *this;
+   t.value *= factor;
+   return t;
 }

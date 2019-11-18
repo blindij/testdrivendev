@@ -26,6 +26,6 @@ class Dollar {
    public:
       Dollar(int val) : value(val) {};
       int amount();
-      void times(const int factor);
+      Dollar times(const int factor);
 };
 #endif // _PROJECT_NAME_LIB_HPP_
