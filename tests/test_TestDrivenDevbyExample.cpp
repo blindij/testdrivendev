@@ -32,4 +32,9 @@ TEST_CASE("Value Object implement equals","[equals]"){
    Dollar f={5};
    Dollar g={5};
    REQUIRE (  f.equals(g) );
+   SECTION("Value Object implement equals. Here it is no","[equalsnot]"){
+      Dollar h = {7};
+      REQUIRE(  !f.equals(h) );
+
+   }
 }
