@@ -18,5 +18,8 @@ matrix:
         - CMAKE_VERSION="3.9.2"
         - BUILDFLAGS="VERBOSE=1"
 
+script:
+   - ./tests/test_TestDrivenDevbyExample  "TDDbyexample test"
+
 notifications:
    email: false
