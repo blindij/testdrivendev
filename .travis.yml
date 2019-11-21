@@ -2,9 +2,9 @@
 language: cpp
 sudo: false
 dist: trusty
+os:
+ - linux 
 matrix:
-   fast_finish: true
-   include:
       - os: linux
       addons: &1
         apt:
@@ -21,6 +21,7 @@ before_script:
    - export CXX=${COMPILER}
    - cd ${TRAVIS_BUILD_DIR}
    - cmake -S. -BBuild-Debug -DTESTS=TRUE -DCMAKE_BUILD_TYPE=Debug -Wdev
+
 script:
    - cd Build-Debug
    - make -j 2
