@@ -1,12 +1,22 @@
+
 language: cpp
+sudo: false
+dist: trusty
+matrix:
+   fast_finish: true
+   include:
+      - os: linux
+      addons: &1
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-7
+            - gcc-7
+      env:
+        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+        - CMAKE_VERSION="3.9.2"
+        - BUILDFLAGS="VERBOSE=1"
 
-compiler:
-  - gcc
-  - clang
-
-before_script:
-  - mkdir build
-  - cd build
-  - cmake -DTESTS=TRUE ..
-
-script: make && make test
+notifications:
+   email: false
