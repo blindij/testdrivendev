@@ -20,7 +20,7 @@ matrix:
 before_script:
    - export CXX=${COMPILER}
    - cd ${TRAVIS_BUILD_DIR}
-   - cmake -S. -BBuild-Debug -DCMAKE_BUILD_TYPE=Debug -Wdev
+   - cmake -S. -BBuild-Debug -DTESTS=TRUE -DCMAKE_BUILD_TYPE=Debug -Wdev
 script:
    - cd Build-Debug
    - make -j 2
