@@ -1,31 +1,4 @@
-
-language: cpp
-sudo: false
-dist: trusty
-os:
- - linux 
-matrix:
-      - os: linux
-      addons: &1
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-7
-            - gcc-7
-      env:
-        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
-        - BUILDFLAGS="VERBOSE=1"
-
-before_script:
-   - export CXX=${COMPILER}
-   - cd ${TRAVIS_BUILD_DIR}
-   - cmake -S. -BBuild-Debug -DTESTS=TRUE -DCMAKE_BUILD_TYPE=Debug -Wdev
-
-script:
-   - cd Build-Debug
-   - make -j 2
-   - ctest
-
-notifications:
-   email: false
+language:  ruby
+rvm:
+ - 2.2
+ - jruby
