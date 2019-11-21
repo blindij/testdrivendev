@@ -15,11 +15,16 @@ matrix:
             - gcc-7
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
-        - CMAKE_VERSION="3.9.2"
         - BUILDFLAGS="VERBOSE=1"
 
+before_script:
+   - export CXX=${COMPILER}
+   - cd ${TRAVIS_BUILD_DIR}
+   - cmake -S. -BBuild-Debug -DCMAKE_BUILD_TYPE=Debug -Wdev
 script:
-   - ./tests/test_TestDrivenDevbyExample  "TDDbyexample test"
+   - cd Build-Debug
+   - make -j 2
+   - ctest
 
 notifications:
    email: false
