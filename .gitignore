@@ -1,6 +1,7 @@
 # CMake build and output folders
 build/*
 .build/*
+Testing/
 
 # Vim swap files
 *.swp
