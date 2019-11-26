@@ -2,7 +2,7 @@ language:
  - cpp
 dist: xenial
 before_script:
-   cmake -S blindij/testdrivendev -B.build
+   cmake -S . -B.build
 script:
    cd .build
    make 
