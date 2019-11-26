@@ -1,4 +1,9 @@
 language:
  - cpp
 dist: xenial
-
+before_script:
+   cmake -S. -B.build
+script:
+   cd .build
+   make 
+   pwd
