@@ -2,8 +2,8 @@ language:
  - cpp
 dist: xenial
 before_script:
-   - cmake -S . -B.build
+   - cmake -S . -B.build -DTESTS=TRUE
 script:
    - cd .build
    - make 
-   - pwd
+   - ctest
