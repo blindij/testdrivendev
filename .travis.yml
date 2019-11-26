@@ -1,18 +1,4 @@
 language:
  - cpp
-sudo: false
-dist: trusty
-os:
- - linux
-    addons: &1
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-        packages:
-          - gcc-7
-          - g++-7
-        env:
-          - CMAKE_VERSION="3.12.1"
-          - CMAKE_GENERATOR="Unix Makefiles"
-          - BUILDFLAGS="VERBOSE=1"
+dist: xenial
 
