@@ -20,21 +20,19 @@ TEST_CASE("TDDbyexample test") {
 
 TEST_CASE("Test multiplication","[multiplication]"){
    Dollar five = {5};
-   Dollar product = five.times(2);
-   REQUIRE( (five * 2).operator==((*(new Dollar{10}))) );
+   REQUIRE( (five * 2) == (*(new Dollar{10})) );
    SECTION("Mulitply by three","[3x]"){
-      product = five.times(3);
-      REQUIRE( product.equals(*(new Dollar{15})) );
+      REQUIRE( five * 3 == (*(new Dollar{15})) );
    }
 }
 
 TEST_CASE("Value Object implement equals","[equals]"){
    Dollar f={5};
    Dollar g={5};
-   REQUIRE (  f.equals(g) );
+   REQUIRE ( f  == g );
    SECTION("Value Object implement equals. Here it is no","[equalsnot]"){
       Dollar h = {7};
-      REQUIRE(  !f.equals(h) );
+      REQUIRE(  !(f == h) );
 
    }
 }
