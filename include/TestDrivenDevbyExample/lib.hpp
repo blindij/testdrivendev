@@ -29,5 +29,6 @@ class Dollar {
       Dollar times(const int factor);
       Dollar operator*(int factor) const;
       bool equals(const Dollar& dobj);
+      bool operator==(const Dollar & objd) const;
 };
 #endif // _PROJECT_NAME_LIB_HPP_

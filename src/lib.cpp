@@ -18,6 +18,10 @@ Dollar Dollar::operator*(int factor) const{
    return t;
 }
 
+bool Dollar::operator==(const Dollar & dobj) const {
+   return this->value == dobj.value;
+}
+
 bool Dollar::equals(const Dollar& dobj){
    return this->value == dobj.value;
 }
