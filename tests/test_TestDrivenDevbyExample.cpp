@@ -21,10 +21,10 @@ TEST_CASE("TDDbyexample test") {
 TEST_CASE("Test multiplication","[multiplication]"){
    Dollar five = {5};
    Dollar product = five.times(2);
-   REQUIRE(product.amount() == 10);
+   REQUIRE( product.equals(*(new Dollar{10})) );
    SECTION("Mulitply by three","[3x]"){
       product = five.times(3);
-      REQUIRE( product.amount() == 15 );
+      REQUIRE( product.equals(*(new Dollar{15})) );
    }
 }
 
