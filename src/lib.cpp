@@ -2,6 +2,13 @@
 
 int AddTwo::Add(int a, int b) { return a + b; }
 
+bool Money::operator==(const Money & dobj) const {
+   return this->value == dobj.value;
+}
+
+
+Dollar::Dollar(int value) : Money(value){}
+
 int Dollar::amount(){
       return value;
 }
@@ -18,10 +25,7 @@ Dollar operator*(int factor, const Dollar & d) {
    return t;
 }
 
-bool Dollar::operator==(const Dollar & dobj) const {
-   return this->value == dobj.value;
-}
-
+Franc::Franc(int value) : Money(value){}
 
 int Franc::amount(){
       return value;
@@ -39,6 +43,3 @@ Franc operator*(int factor, const Franc & d) {
    return t;
 }
 
-bool Franc::operator==(const Franc & dobj) const {
-   return this->value == dobj.value;
-}

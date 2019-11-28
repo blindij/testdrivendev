@@ -15,30 +15,38 @@ public:
     */
   static int Add(int a, int b);
 };
+// ----------------------------------------------------
+// Class Money - a super class for currency
+// ----------------------------------------------------
+class Money {
+   protected:
+      int value;
+   public:
+      Money(int val) : value(val) {};
+      bool operator==(const Money & objd) const;
+};
 
 // ----------------------------------------------------
 // Class dollar; for satisfying the multiply test from 
 // Test Driven Development by Example
 // ----------------------------------------------------
-class Dollar {
-   private:
-      int value;
+class Dollar : public Money {
    public:
-      Dollar(int val) : value(val) {};
+       Dollar(int val);
       int amount();
       Dollar operator*(int factor) const;
-      bool operator==(const Dollar & objd) const;
       friend Dollar operator*(int factor, const Dollar& d);
 };
 
-class Franc {
-   private:
-      int value;
+// ----------------------------------------------------
+// Class Franc - currently a copy of Dollar
+// ----------------------------------------------------
+class Franc : public Money {
    public:
-      Franc(int val) : value(val) {};
+      Franc(int val);
       int amount();
       Franc operator*(int factor) const;
-      bool operator==(const Franc & objd) const;
+//      bool operator==(const Franc & objd) const;
       friend Franc operator*(int factor, const Franc & d);
 };
 #endif // _PROJECT_NAME_LIB_HPP_
