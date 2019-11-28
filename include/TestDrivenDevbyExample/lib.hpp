@@ -26,9 +26,19 @@ class Dollar {
    public:
       Dollar(int val) : value(val) {};
       int amount();
-      Dollar times(const int factor);
       Dollar operator*(int factor) const;
-      bool equals(const Dollar& dobj);
       bool operator==(const Dollar & objd) const;
+      friend Dollar operator*(int factor, const Dollar& d);
+};
+
+class Franc {
+   private:
+      int value;
+   public:
+      Franc(int val) : value(val) {};
+      int amount();
+      Franc operator*(int factor) const;
+      bool operator==(const Franc & objd) const;
+      friend Franc operator*(int factor, const Franc & d);
 };
 #endif // _PROJECT_NAME_LIB_HPP_
