@@ -12,6 +12,12 @@ Dollar Dollar::times(const int factor){
    return t;
 }
 
+Dollar Dollar::operator*(int factor) const{
+   Dollar t = *this;
+   t.value *= factor;
+   return t;
+}
+
 bool Dollar::equals(const Dollar& dobj){
    return this->value == dobj.value;
 }

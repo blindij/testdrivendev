@@ -21,7 +21,7 @@ TEST_CASE("TDDbyexample test") {
 TEST_CASE("Test multiplication","[multiplication]"){
    Dollar five = {5};
    Dollar product = five.times(2);
-   REQUIRE( product.equals(*(new Dollar{10})) );
+   REQUIRE( five.operator*(2).equals((*(new Dollar{10}))) );
    SECTION("Mulitply by three","[3x]"){
       product = five.times(3);
       REQUIRE( product.equals(*(new Dollar{15})) );

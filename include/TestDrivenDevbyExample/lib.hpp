@@ -27,6 +27,7 @@ class Dollar {
       Dollar(int val) : value(val) {};
       int amount();
       Dollar times(const int factor);
+      Dollar operator*(int factor) const;
       bool equals(const Dollar& dobj);
 };
 #endif // _PROJECT_NAME_LIB_HPP_
