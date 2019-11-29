@@ -19,11 +19,12 @@ public:
 // Class Money - a super class for currency
 // ----------------------------------------------------
 class Money {
+   friend bool operator==(const Money &lhs, const Money &rhs);
    protected:
       int value;
+      virtual bool equal(const Money &) const;
    public:
       Money(int val) : value(val) {};
-      bool operator==(const Money & objd) const;
 };
 
 // ----------------------------------------------------
@@ -31,6 +32,8 @@ class Money {
 // Test Driven Development by Example
 // ----------------------------------------------------
 class Dollar : public Money {
+   protected:
+      virtual bool equal(const Money &) const;
    public:
        Dollar(int val);
       int amount();
@@ -42,6 +45,8 @@ class Dollar : public Money {
 // Class Franc - currently a copy of Dollar
 // ----------------------------------------------------
 class Franc : public Money {
+   protected:
+      virtual bool equal(const Money &) const;
    public:
       Franc(int val);
       int amount();

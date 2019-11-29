@@ -32,6 +32,7 @@ TEST_CASE("Value Object implement equals","[equals]"){
    REQUIRE( !( *(new Dollar{5}) == *(new Dollar{6})) );
    REQUIRE( *(new Franc{5}) == *(new Franc{5}) );
    REQUIRE( !(* (new Dollar{5}) == *(new Dollar{6})) );
+   REQUIRE( !(*(new Dollar{5}) == *(new Franc{5})) );
 }
 
 TEST_CASE("Test franc multiplication","[franc],[multiplication]"){
