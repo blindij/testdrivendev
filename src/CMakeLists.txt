@@ -2,7 +2,7 @@
 file(GLOB HEADERS CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/include/TestDrivenDevbyExample/*.hpp")
 
 # Make a static library (tradeoff of memory for better performance)
-add_library(TDDbyexample STATIC lib.cpp ${HEADERS})
+add_library(TDDbyexample STATIC lib.cpp Franc.cpp ${HEADERS})
 
 # Add an alias so the target can be used while building
 add_library(TDDbyexample::TDDbyexample ALIAS TDDbyexample)
