@@ -30,5 +30,5 @@ message(INFO "CMake Project name: ${CMAKE_PROJECT_NAME}, Project name: ${PROJECT
 # Testing only available if this is the main project
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND TESTS)
     enable_testing()
-    add_subdirectory(tests)
+    add_subdirectory(test)
 endif()

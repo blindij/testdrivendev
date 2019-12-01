@@ -4,6 +4,6 @@ build/*
 Testing/
 
 # Vim swap files
-*.swp
+*.sw?
 
 
