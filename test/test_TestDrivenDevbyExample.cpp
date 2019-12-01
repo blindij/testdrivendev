@@ -19,11 +19,11 @@ TEST_CASE("TDDbyexample test") {
 }
 
 TEST_CASE("Test multiplication","[dollar],[multiplication]"){
-   Dollar five = {5};
-   REQUIRE( (five * 2) == (*(new Dollar{10})) );
+   Dollar *pfive = Money::dollar(5);
+   REQUIRE( ((*pfive) * 2) == (*(new Dollar{10})) );
    SECTION("Mulitply by three","[3x]"){
-      REQUIRE( (five * 3) == (*(new Dollar{15})) );
-      REQUIRE( (3 * five) == (*(new Dollar{15})) );
+      REQUIRE( ((*pfive) * 3) == (*(new Dollar{15})) );
+      REQUIRE( (3 * (*pfive)) == (*(new Dollar{15})) );
    }
 }
 

@@ -16,6 +16,18 @@ bool Money::equal(const Money &rhs) const {
    return false;   // Comparing money to money meaningless
 }
 
+Money* Money::Create(CurrencyType type, int amount){
+   if (type == CT_Dollar) return new Dollar(amount);
+   else return NULL;
+}
+
+Dollar* Money::dollar(int amount){
+   return dynamic_cast<Dollar *>(Money::Create(CT_Dollar, amount));
+}
+
+// ------------------------------------------------
+// Class Dollar
+// ------------------------------------------------
 Dollar::Dollar(int value) : Money(value){}
 
 bool Dollar::equal(const Money &rhs) const {
@@ -39,3 +51,4 @@ Dollar operator*(int factor, const Dollar & d) {
    t.value *= factor;
    return t;
 }
+
