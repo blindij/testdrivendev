@@ -28,3 +28,4 @@ install(EXPORT TDDbyexampleTargets
     FILE TDDbyexampleConfig.cmake
     DESTINATION lib/cmake/TDDbyexample)
 
+add_executable(factory.x factory_pattern.cpp)
