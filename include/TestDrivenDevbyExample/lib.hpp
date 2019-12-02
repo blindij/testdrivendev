@@ -2,6 +2,7 @@
 #define _PROJECT_NAME_LIB_HPP_
 
 #include <iostream>
+#include <typeinfo>
 
 /// A dummy class for doing addition
 /** A longer description that is redundant here because it's a simple class */
