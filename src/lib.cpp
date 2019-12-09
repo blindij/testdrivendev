@@ -45,5 +45,5 @@ int Dollar::amount(){
       return value;
 }
 Money* Dollar::times(int multiplier){
-   return Money::dollar(this->amount()*multiplier);
+   return Money::dollar(amount()*multiplier);
 }
