@@ -28,3 +28,6 @@ Franc operator*(int factor, const Franc & d) {
    return t;
 }
 
+Money* Franc::times(int multiplier){
+   return new Franc(amount() * multiplier);
+}

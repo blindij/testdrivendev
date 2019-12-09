@@ -18,11 +18,16 @@ bool Money::equal(const Money &rhs) const {
 
 Money* Money::Create(CurrencyType type, int amount){
    if (type == CT_Dollar) return new Dollar(amount);
+   else if (type == CT_Franc) return new Franc(amount);
    else return NULL;
 }
 
 Money* Money::dollar(int amount){
    return dynamic_cast<Dollar *>(Money::Create(CT_Dollar, amount));
+}
+
+Money* Money::franc(int amount) {
+   return dynamic_cast<Franc *>(Money::Create(CT_Franc, amount));
 }
 
 // ------------------------------------------------

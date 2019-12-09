@@ -23,7 +23,7 @@ public:
 class Dollar;
 
 class Money {
-   enum CurrencyType {CT_Dollar};
+   enum CurrencyType {CT_Dollar, CT_Franc};
    friend bool operator==(const Money &lhs, const Money &rhs);
    protected:
       int value;
@@ -32,6 +32,7 @@ class Money {
    public:
       Money(int val) : value(val) {};
       static Money* dollar(int amount);
+      static Money* franc(int amount);
       virtual Money* times(int multiplier) = 0;
 };
 

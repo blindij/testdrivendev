@@ -40,11 +40,8 @@ TEST_CASE("Value Object implement equals","[equals]"){
    REQUIRE( !(*Money::dollar(5) == *(new Franc{5})) );
 }
 
-//TEST_CASE("Test franc multiplication","[!hide],[franc]"){
-//   Franc five = {5};
-//   REQUIRE( (five * 2) == (*(new Franc{10})) );
-//   SECTION("Mulitply by three","[3x]"){
-//      REQUIRE( (five * 3) == (*(new Franc{15})) );
-//      REQUIRE( (3 * five) == (*(new Franc{15})) );
-//   }
-//}
+TEST_CASE("Test franc multiplication","[franc],[times]"){
+   Money *pfive = Money::franc(5);
+   REQUIRE( (*pfive->times(2)) == (*Money::franc(10)) );
+   REQUIRE( *pfive->times(3) == *Money::franc(15) );
+}
