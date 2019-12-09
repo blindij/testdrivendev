@@ -33,7 +33,7 @@ Money* Money::franc(int amount) {
 // ------------------------------------------------
 // Class Dollar
 // ------------------------------------------------
-Dollar::Dollar(int value, std::string cuytag) : Money(value){ Money::Currency = cuytag;}
+Dollar::Dollar(int value, std::string ct) : Money(value, ct){}
 
 bool Dollar::equal(const Money &rhs) const {
    // we know the types are equal, so the cast won't throw
@@ -44,19 +44,6 @@ bool Dollar::equal(const Money &rhs) const {
 int Dollar::amount(){
       return value;
 }
-
-//Dollar dollar::operator*(int factor) const
-//   Dollar t = *this;
-//   t.value *= factor;
-//   return t;
-//}
-
-//Dollar operator*(int factor, const Dollar & d) {
-//   Dollar t = d;
-//   t.value *= factor;
-//   return t;
-//}
-
 Money* Dollar::times(int multiplier){
    return Money::dollar(this->amount()*multiplier);
 }

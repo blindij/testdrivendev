@@ -24,14 +24,14 @@ class Money {
    enum CurrencyType {CT_Dollar, CT_Franc};
    friend bool operator==(const Money &lhs, const Money &rhs);
    private:
+      std::string Currency;
 
    protected:
       int value;
-      std::string Currency;
       virtual bool equal(const Money &) const;
       static Money* Create(CurrencyType type, int amount);
    public:
-      Money(int val) : value(val) {};
+      Money(int val, std::string ct) : value(val), Currency(ct) {};
       static Money* dollar(int amount);
       static Money* franc(int amount);
       virtual Money* times(int multiplier) = 0;
