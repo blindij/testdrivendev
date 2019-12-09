@@ -21,7 +21,7 @@ Money* Money::Create(CurrencyType type, int amount){
    else return NULL;
 }
 
-Dollar* Money::dollar(int amount){
+Money* Money::dollar(int amount){
    return dynamic_cast<Dollar *>(Money::Create(CT_Dollar, amount));
 }
 

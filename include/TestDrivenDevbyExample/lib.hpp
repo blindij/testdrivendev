@@ -31,7 +31,8 @@ class Money {
       static Money* Create(CurrencyType type, int amount);
    public:
       Money(int val) : value(val) {};
-      static Dollar *dollar(int amount);
+      static Money* dollar(int amount);
+      virtual Money* times(int multiplier) = 0;
 };
 
 // ----------------------------------------------------
