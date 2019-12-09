@@ -18,7 +18,12 @@ TEST_CASE("TDDbyexample test") {
   }
 }
 
-TEST_CASE("Test multiplication","[dollar],[multiplication]"){
+TEST_CASE("Abstract method times()","[dollar],[times]"){
+   Dollar *pfive = Money::dollar(5);
+   REQUIRE( ((*pfive->times(2))) == (*(new Dollar{10})));
+}
+
+TEST_CASE("Test multiplication","[!hide],[multiplication]"){
    Dollar *pfive = Money::dollar(5);
    REQUIRE( ((*pfive) * 2) == (*(new Dollar{10})) );
    SECTION("Mulitply by three","[3x]"){
@@ -34,7 +39,7 @@ TEST_CASE("Value Object implement equals","[equals]"){
    REQUIRE( !(*(new Dollar{5}) == *(new Franc{5})) );
 }
 
-TEST_CASE("Test franc multiplication","[franc],[multiplication]"){
+TEST_CASE("Test franc multiplication","[!hide],[multiplication]"){
    Franc five = {5};
    REQUIRE( (five * 2) == (*(new Franc{10})) );
    SECTION("Mulitply by three","[3x]"){
