@@ -46,7 +46,7 @@ class Dollar : public Money {
    protected:
       virtual bool equal(const Money &) const;
    public:
-      Dollar(int val);
+      Dollar(int val, std::string currency);
       int amount();
       Dollar operator*(int factor) const;
       friend Dollar operator*(int factor, const Dollar& d);
@@ -60,7 +60,7 @@ class Franc : public Money {
    protected:
       virtual bool equal(const Money &) const;
    public:
-      Franc(int val);
+      Franc(int val, std::string currency);
       int amount();
       Franc operator*(int factor) const;
       virtual Money* times(int multiplier) final;

@@ -20,7 +20,7 @@ TEST_CASE("TDDbyexample test") {
 
 TEST_CASE("Abstract method times()","[dollar],[times]"){
    Money *pfive = Money::dollar(5);
-   REQUIRE( ((*pfive->times(2))) == (*(new Dollar{10})));
+   REQUIRE( ((*pfive->times(2))) == (*Money::dollar(10)) );
 }
 
 TEST_CASE("Use currency","[currency]"){

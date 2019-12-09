@@ -17,8 +17,8 @@ bool Money::equal(const Money &rhs) const {
 }
 
 Money* Money::Create(CurrencyType type, int amount){
-   if (type == CT_Dollar) return new Dollar(amount);
-   else if (type == CT_Franc) return new Franc(amount);
+   if (type == CT_Dollar) return new Dollar(amount,"USD");
+   else if (type == CT_Franc) return new Franc(amount, "CHF");
    else return NULL;
 }
 
@@ -33,7 +33,7 @@ Money* Money::franc(int amount) {
 // ------------------------------------------------
 // Class Dollar
 // ------------------------------------------------
-Dollar::Dollar(int value) : Money(value){ Money::Currency = "USD";}
+Dollar::Dollar(int value, std::string cuytag) : Money(value){ Money::Currency = cuytag;}
 
 bool Dollar::equal(const Money &rhs) const {
    // we know the types are equal, so the cast won't throw
@@ -45,18 +45,18 @@ int Dollar::amount(){
       return value;
 }
 
-Dollar Dollar::operator*(int factor) const{
-   Dollar t = *this;
-   t.value *= factor;
-   return t;
-}
+//Dollar dollar::operator*(int factor) const
+//   Dollar t = *this;
+//   t.value *= factor;
+//   return t;
+//}
 
-Dollar operator*(int factor, const Dollar & d) {
-   Dollar t = d;
-   t.value *= factor;
-   return t;
-}
+//Dollar operator*(int factor, const Dollar & d) {
+//   Dollar t = d;
+//   t.value *= factor;
+//   return t;
+//}
 
 Money* Dollar::times(int multiplier){
-   return new Dollar(amount()*multiplier);
+   return Money::dollar(this->amount()*multiplier);
 }
