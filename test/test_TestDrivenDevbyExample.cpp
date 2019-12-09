@@ -23,15 +23,10 @@ TEST_CASE("Abstract method times()","[dollar],[times]"){
    REQUIRE( ((*pfive->times(2))) == (*(new Dollar{10})));
 }
 
-//TEST_CASE("Test multiplication","[!hide],[dollar]"){
-//   Money* pfive = Money::dollar(5);
-//   REQUIRE( ((*pfive) * 2) == (*(new Dollar{10})) );
-//   SECTION("Mulitply by three","[3x]"){
-//      REQUIRE( ((*pfive) * 3) == (*(new Dollar{15})) );
-//      REQUIRE( (3 * (*pfive)) == (*(new Dollar{15})) );
-//   }
-//}
-//
+TEST_CASE("Use currency","[currency]"){
+   REQUIRE( "USD" == Money::dollar(1)->currency() );
+   REQUIRE( "CHF" == Money::franc(1)->currency() );
+}
 
 TEST_CASE("Value Object implement equals","[equals]"){
    REQUIRE( *Money::dollar(5) == *Money::dollar(5) );
