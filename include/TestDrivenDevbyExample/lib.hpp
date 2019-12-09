@@ -19,14 +19,15 @@ public:
 // ----------------------------------------------------
 // Class Money - a super class for currency
 // ----------------------------------------------------
-// Forward declaration of Dollar;
-class Dollar;
 
 class Money {
    enum CurrencyType {CT_Dollar, CT_Franc};
    friend bool operator==(const Money &lhs, const Money &rhs);
+   private:
+
    protected:
       int value;
+      std::string Currency;
       virtual bool equal(const Money &) const;
       static Money* Create(CurrencyType type, int amount);
    public:
@@ -63,7 +64,7 @@ class Franc : public Money {
       Franc(int val);
       int amount();
       Franc operator*(int factor) const;
-//      bool operator==(const Franc & objd) const;
+      virtual Money* times(int multiplier) final;
       friend Franc operator*(int factor, const Franc & d);
       virtual std::string currency() const;
 };

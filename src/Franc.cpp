@@ -3,7 +3,7 @@
 // Move Franc Class methods in own file
 #include <TestDrivenDevbyExample/lib.hpp>
 
-Franc::Franc(int value) : Money(value){}
+Franc::Franc(int value) : Money(value){ Money::Currency = "CHF";}
 
 
 bool Franc::equal(const Money &rhs) const {
@@ -33,5 +33,5 @@ Money* Franc::times(int multiplier){
 }
 
 std::string Franc::currency() const{
-   return "CHF";
+   return Currency;
 }

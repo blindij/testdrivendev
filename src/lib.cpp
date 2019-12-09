@@ -33,7 +33,7 @@ Money* Money::franc(int amount) {
 // ------------------------------------------------
 // Class Dollar
 // ------------------------------------------------
-Dollar::Dollar(int value) : Money(value){}
+Dollar::Dollar(int value) : Money(value){ Money::Currency = "USD";}
 
 bool Dollar::equal(const Money &rhs) const {
    // we know the types are equal, so the cast won't throw
@@ -62,5 +62,5 @@ Money* Dollar::times(int multiplier){
 }
 
 std::string Dollar::currency() const {
-   return "USD";
+   return Currency;
 }
