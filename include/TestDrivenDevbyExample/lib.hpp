@@ -35,7 +35,7 @@ class Money {
       static Money* dollar(int amount);
       static Money* franc(int amount);
       virtual Money* times(int multiplier) = 0;
-      virtual std::string currency() const = 0;
+      std::string currency() { return Currency; }
 };
 
 // ----------------------------------------------------
@@ -51,7 +51,6 @@ class Dollar : public Money {
       Dollar operator*(int factor) const;
       friend Dollar operator*(int factor, const Dollar& d);
       virtual Money* times(int multiplier) final;
-      virtual std::string currency() const;
 };
 
 // ----------------------------------------------------
@@ -66,6 +65,5 @@ class Franc : public Money {
       Franc operator*(int factor) const;
       virtual Money* times(int multiplier) final;
       friend Franc operator*(int factor, const Franc & d);
-      virtual std::string currency() const;
 };
 #endif // _PROJECT_NAME_LIB_HPP_

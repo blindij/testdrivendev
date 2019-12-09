@@ -60,7 +60,3 @@ Dollar operator*(int factor, const Dollar & d) {
 Money* Dollar::times(int multiplier){
    return new Dollar(amount()*multiplier);
 }
-
-std::string Dollar::currency() const {
-   return Currency;
-}

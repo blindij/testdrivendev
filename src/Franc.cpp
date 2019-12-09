@@ -32,6 +32,3 @@ Money* Franc::times(int multiplier){
    return new Franc(amount() * multiplier);
 }
 
-std::string Franc::currency() const{
-   return Currency;
-}
