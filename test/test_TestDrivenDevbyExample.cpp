@@ -36,8 +36,8 @@ TEST_CASE("Abstract method times()","[dollar],[times]"){
 TEST_CASE("Value Object implement equals","[equals]"){
    REQUIRE( *Money::dollar(5) == *Money::dollar(5) );
    REQUIRE( !( *Money::dollar(5) == *Money::dollar(6)) );
-   REQUIRE( *(new Franc{5}) == *(new Franc{5}) );
-   REQUIRE( !(*Money::dollar(5) == *(new Franc{5})) );
+   REQUIRE( *Money::franc(5) == *Money::franc(5) );
+   REQUIRE( !(*Money::dollar(5) == *Money::franc(5)) );
 }
 
 TEST_CASE("Test franc multiplication","[franc],[times]"){
